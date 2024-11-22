@@ -25,12 +25,15 @@ const Products = () => {
       </h1>
       {/* show product */}
       <div className="grid grid-cols-3 sm:grid-cols-4 lg:grid-cols-6 gap-4 lg:gap-6 ">
-        <div className="col-span-1 sm:col-span-1 lg:col-span-1 border rounded-xl max-h-fit lg:p-6 lg:space-y-3">
-          <p className="font-bold text-xl sm:text-xl lg:text-base bg-color3 text-white rounded-full px-8 py-3">
+        <div className="col-span-1 sm:col-span-1 lg:col-span-1 border rounded-xl max-h-fit py-4 lg:p-6 space-y-3 lg:space-y-3">
+          <p className="font-medium sm:font-bold text-base sm:text-xl lg:text-base bg-color3 text-white rounded-full p-1 lg:px-8 lg:py-3">
             All Product
           </p>
-          {productCategory.map((product,index) => (
-            <p key={index} className="font-bold text-xl sm:text-xl lg:text-base bg-color2.05 text-color2.6 rounded-full px-8 py-3">
+          {productCategory.map((product, index) => (
+            <p
+              key={index}
+              className="font-medium text-base sm:text-xl lg:text-base bg-color2.05 text-color2.6 rounded-md p-1 lg:px-8 lg:py-3 max-sm:mx-1"
+            >
               {product}
             </p>
           ))}

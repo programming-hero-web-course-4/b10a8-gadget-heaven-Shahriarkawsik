@@ -19,6 +19,7 @@ export default {
         Sora: "Sora",
       },
       fontSize: {
+        24: "24px",
         40: "40px",
         56: "56px",
       },
