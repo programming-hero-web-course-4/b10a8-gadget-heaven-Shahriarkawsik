@@ -13,14 +13,17 @@ export default {
         color4: "rgb(48, 156, 8)",
         "color4.1": "rgb(48, 156, 8,0.1)",
         color5: "rgb(246, 246, 246)",
+        color6: "rgb(217, 217, 217)",
       },
       fontFamily: {
         Sora: "Sora",
       },
       fontSize: {
+        40: "40px",
         56: "56px",
       },
       lineHeight: {
+        50: "50px",
         72: "72px",
       },
     },
