@@ -1,12 +1,13 @@
 import { useEffect } from "react";
-
 import { useLocation } from "react-router-dom";
+import StatChart from "./StatChart";
 
 const Statistics = () => {
   const { pathname } = useLocation();
   useEffect(() => {
     document.title = "Statistics | Gadget Heaven";
   }, []);
+  
   return (
     <div>
       <div className="bg-color3">
@@ -28,7 +29,7 @@ const Statistics = () => {
             <h1 className="font-bold text-color1 lg:text-2xl">Statistics</h1>
             {/* Statistics */}
             <div className="bg-white rounded-2xl p-8 flex items-center justify-between">
-              <h1>Chart</h1>
+              <StatChart/>
             </div>
           </div>
         </div>

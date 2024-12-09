@@ -1,10 +1,15 @@
 import { AiOutlineShoppingCart } from "react-icons/ai";
-import React from "react";
+import React, { useContext } from "react";
 import { useLoaderData, useParams } from "react-router-dom";
 import { FaRegStar, FaStar } from "react-icons/fa";
 import { BsHeart } from "react-icons/bs";
+import { gadgetContext } from "../../AuthContent/AuthContent";
+import Product from "./../Product/Product";
+import { Alert } from "./../../Alert/Alert";
 
 const ProductDetails = () => {
+  const { gadgetCard, setGadgetCard, gadgetWishlist, setGadgetWishlist } =
+    useContext(gadgetContext);
   const { id } = useParams();
   const data = useLoaderData();
   const product = data.find((product) => product.product_id === id);
@@ -17,10 +22,19 @@ const ProductDetails = () => {
     availability,
     rating,
   } = product;
+  // const newGadget = [...gadgetCard, product];
+  const handleAddToCard = (product) => {
+    setGadgetCard([...gadgetCard, product]);
+    Alert(true, "Add Product to Your Cart");
+  };
+  const handleWishlist = (product) => {
+    setGadgetWishlist([...gadgetWishlist, product]);
+    Alert(true, "Add Product to Your Wishlist");
+  };
 
   return (
     <div>
-      <div  className="bg-color3 font-Sora rounded-lg">
+      <div className="bg-color3 font-Sora rounded-lg">
         <div className="w-11/12 lg:w-4/5 mx-auto 2xl:w-[72%] h-[400px] sm:h-[400px] lg:h-[694px] 2xl:h-[450px] relative top-0 left-0 p-3 2xl:p-8 ">
           {/* banner description */}
           <div className="flex flex-col justify-center items-center my-12 space-y-5 sm:space-y-10 lg:space-y-7">
@@ -84,13 +98,17 @@ const ProductDetails = () => {
               </div>
               <div className="flex items-center gap-4">
                 <button
+                  onClick={() => handleAddToCard(product)}
                   className="font-medium sm:font-bold text-base sm:text-xl lg:text-base bg-color3 text-white 
                 rounded-full px-5 py-2 lg:px-3 2xl:px-8 lg:py-3 flex justify-center items-center gap-2"
                 >
                   <span>Add To Card </span>
                   <AiOutlineShoppingCart className=" text-xl " />
                 </button>
-                <button className="bg-white border border-color1.15 p-2 rounded-full">
+                <button
+                  onClick={() => handleWishlist(product)}
+                  className="bg-white border border-color1.15 p-2 rounded-full"
+                >
                   <BsHeart className="text-color1 text-xl " />
                 </button>
               </div>

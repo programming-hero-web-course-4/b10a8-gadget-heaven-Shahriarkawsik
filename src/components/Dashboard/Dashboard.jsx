@@ -1,13 +1,11 @@
 import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
-import { Alert } from "./../../Alert/Alert";
-import { AiOutlineControl } from "react-icons/ai";
-import { TiDeleteOutline } from "react-icons/ti";
 import Card from "../Card/Card";
 import WishList from "../WishList/WishList";
+import checkImg from "../../assets/Group.png";
 
 const Dashboard = () => {
-  const [toggle, setToggle] = useState({ item: "card", status: false });
+  const [toggle, setToggle] = useState({ item: "card", status: true });
   /*************** Title ********************/
   const { pathname } = useLocation();
   useEffect(() => {
@@ -17,15 +15,10 @@ const Dashboard = () => {
   // toggle 😝
   const handleCart = () => {
     setToggle({ item: "card", status: true });
-    if (toggle.status) {
-      Alert(true, "true");
-    }
+    // document.getElementById("paymentModal").showModal();
   };
   const handleWishlist = () => {
     setToggle({ item: "wishlist", status: false });
-    if (!toggle.status) {
-      Alert(true, "false");
-    }
   };
 
   return (
@@ -70,8 +63,30 @@ const Dashboard = () => {
           </div>
         </div>
       </div>
-      {/* Card */}
+      {/* toggle Card and Wishlist */}
       {toggle.status ? <Card /> : <WishList />}
+      {/* Modal */}
+      <dialog id="paymentModal" className="modal">
+        <div className="modal-box text-center space-y-3">
+          <img className="mx-auto" src={checkImg} alt="" />
+          <h3 className="font-bold text-24 leading-8 text-color2">
+            Payment Successfully
+          </h3>
+          <hr />
+          <p className="font-medium text-base leading-8 text-color2.6">
+            Thanks for purchasing.
+          </p>
+          <p className="font-medium text-base leading-8 text-color2.6">
+            Total : {}
+          </p>
+          {/* modal-action */}
+          <div className="modal-action flex justify-center">
+            <form method="dialog ">
+              <button className="btn w-full">Close</button>
+            </form>
+          </div>
+        </div>
+      </dialog>
     </div>
   );
 };

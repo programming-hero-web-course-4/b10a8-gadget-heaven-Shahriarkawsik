@@ -1,10 +1,12 @@
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import { BsHeart } from "react-icons/bs";
-import React from "react";
+import React, { useContext } from "react";
 import { Link, NavLink, useLocation } from "react-router-dom";
+import { gadgetContext } from "../../AuthContent/AuthContent";
 
 const NavBar = () => {
   const { pathname } = useLocation();
+  const { gadgetCard, gadgetWishlist } = useContext(gadgetContext);
   const NavItem = (
     <>
       <NavLink
@@ -70,11 +72,17 @@ const NavBar = () => {
         </ul>
       </div>
       <div className="navbar-end gap-3">
-        <button className="bg-white border border-color1.15 p-2 rounded-full">
+        <button className="relative w-9 h-9 bg-white flex items-center justify-center border border-color1.15 rounded-full">
           <AiOutlineShoppingCart className="text-color1 text-xl " />
+          <small className="text-color3 font-bold absolute -top-3 right-0">
+            {gadgetCard.length ? gadgetCard.length : ""}
+          </small>
         </button>
-        <button className="bg-white border border-color1.15 p-2 rounded-full">
+        <button className="relative w-9 h-9 bg-white flex items-center justify-center border border-color1.15 rounded-full">
           <BsHeart className="text-color1 text-xl " />
+          <small className="text-color3 font-bold absolute -top-3 right-0">
+            {gadgetWishlist.length ? gadgetWishlist.length : ""}
+          </small>
         </button>
       </div>
     </nav>
