@@ -29,7 +29,7 @@ const NavBar = () => {
   );
   return (
     <nav
-      className={`w-11/12 lg:w-4/5 mx-auto navbar   ${
+      className={`w-11/12 lg:w-4/5 font-Sora mx-auto navbar   ${
         pathname === "/" ? "text-white" : "text-color1 my-6"
       }`}
     >

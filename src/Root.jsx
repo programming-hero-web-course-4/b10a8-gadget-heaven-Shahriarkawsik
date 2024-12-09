@@ -8,7 +8,7 @@ const Root = () => {
   return (
     <div>
       {pathname == "/" || <NavBar></NavBar>}
-      <div className="w-11/12 lg:w-4/5 mx-auto">
+      <div className="w-11/12 lg:w-4/5 mx-auto min-h-screen">
         <Outlet></Outlet>
       </div>
       <Footer />
