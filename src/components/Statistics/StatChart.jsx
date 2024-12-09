@@ -30,8 +30,18 @@ const StatChart = () => {
       ) : (
         <>
           <div className="flex justify-center items-center gap-4">
-            <button onClick={() => handleStatistics("price")}>Price</button>
-            <button onClick={() => handleStatistics("rating")}>Rating</button>
+            <button
+              className="bg-color3 rounded-xl px-5 py-1 text-white font-semibold text-xl"
+              onClick={() => handleStatistics("price")}
+            >
+              Price
+            </button>
+            <button
+              className="bg-color4 rounded-xl px-5 py-1 text-white font-semibold text-xl"
+              onClick={() => handleStatistics("rating")}
+            >
+              Rating
+            </button>
           </div>
           <ResponsiveContainer>
             <BarChart
@@ -50,7 +60,11 @@ const StatChart = () => {
               <Legend />
               <Bar
                 dataKey={selectedSubject}
-                fill={selectedSubject === "price" ? "#8884d8" : "#82ca9d"}
+                fill={
+                  selectedSubject === "price"
+                    ? "rgb(149, 56, 226)"
+                    : "#309c08"
+                }
               />
             </BarChart>
           </ResponsiveContainer>
