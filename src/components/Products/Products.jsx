@@ -1,10 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import Product from "../Product/Product";
+import { gadgetContext } from "../../AuthContent/AuthContent";
 
 const Products = () => {
-  const [products, setProducts] = useState([]);
+  const { products, setProducts } = useContext(gadgetContext);
 
-  // console.log(products);
   useEffect(() => {
     fetch("/gadgets.json")
       .then((response) => response.json())

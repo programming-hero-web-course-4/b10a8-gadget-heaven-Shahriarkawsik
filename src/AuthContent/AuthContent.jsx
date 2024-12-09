@@ -2,9 +2,12 @@ import React, { createContext, useState } from "react";
 
 export const gadgetContext = createContext(null);
 const AuthContent = ({ children }) => {
+  const [products, setProducts] = useState([]);
   const [gadgetCard, setGadgetCard] = useState([]);
   const [gadgetWishlist, setGadgetWishlist] = useState([]);
   const authInfo = {
+    products,
+    setProducts,
     gadgetCard,
     setGadgetCard,
     gadgetWishlist,
