@@ -20,8 +20,8 @@ const ProductDetails = () => {
 
   return (
     <div>
-      <div className="bg-color3 font-Sora ">
-        <div className="w-11/12 lg:w-4/5 2xl:w-[72%] h-[400px] sm:h-[400px] lg:h-[694px] 2xl:h-[450px] mx-auto relative top-0 left-0 p-3 2xl:p-8 ">
+      <div  className="bg-color3 font-Sora rounded-lg">
+        <div className="w-11/12 lg:w-4/5 mx-auto 2xl:w-[72%] h-[400px] sm:h-[400px] lg:h-[694px] 2xl:h-[450px] relative top-0 left-0 p-3 2xl:p-8 ">
           {/* banner description */}
           <div className="flex flex-col justify-center items-center my-12 space-y-5 sm:space-y-10 lg:space-y-7">
             <h1 className="font-bold text-xl sm:text-4xl lg:text-3xl lg:leading-10 text-white text-center">
