@@ -3,7 +3,6 @@ import bannerImg from "../../assets/banner.jpg";
 
 const Banner = () => {
   return (
-    // w-11/12 lg:w-4/5
     <div className="w-11/12 lg:w-4/5 2xl:w-[72%] h-[400px] sm:h-[600px] lg:h-[694px] 2xl:h-[650px] mx-auto relative top-0 left-0 ">
       {/* banner description */}
       <div className="flex flex-col justify-center items-center my-12 space-y-5 sm:space-y-10 lg:space-y-7">

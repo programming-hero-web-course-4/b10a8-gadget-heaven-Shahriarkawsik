@@ -19,20 +19,20 @@ const Products = () => {
   });
 
   return (
-    <section className="w-11/12 sm:w-11/12 lg:w-4/5 2xl:w-4/5 mx-auto mt-[170px] sm:mt-[240px] lg:mt-[320px] 2xl:mt-[350px] font-Sora lg:space-y-10">
-      <h1 className="font-bold 2xl:text-40 2xl:leading-50 text-center">
+    <section className="w-11/12 sm:w-11/12 lg:w-11/12 2xl:w-4/5 mx-auto mt-[170px] sm:mt-[240px] lg:mt-[320px] 2xl:mt-[350px] font-Sora space-y-6 sm:space-y-8 lg:space-y-10">
+      <h1 className="font-bold text-2xl sm:text-40 lg:text-3xl 2xl:text-40 2xl:leading-50 text-center">
         Explore Cutting-Edge Gadgets
       </h1>
       {/* show product */}
       <div className="grid grid-cols-3 sm:grid-cols-4 lg:grid-cols-6 gap-4 lg:gap-6 ">
-        <div className="col-span-1 sm:col-span-1 lg:col-span-1 border rounded-xl max-h-fit py-4 lg:p-6 space-y-3 lg:space-y-3">
-          <p className="font-medium sm:font-bold text-base sm:text-xl lg:text-base bg-color3 text-white rounded-full p-1 lg:px-8 lg:py-3">
+        <div className="col-span-1 sm:col-span-1 lg:col-span-1 border rounded-xl max-h-fit py-4 lg:p-3 2xl:p-6 space-y-3 lg:space-y-3">
+          <p className="font-medium sm:font-bold text-base sm:text-xl lg:text-base bg-color3 text-white rounded-full p-1 lg:px-3 2xl:px-8 lg:py-3 max-2xl:text-center">
             All Product
           </p>
           {productCategory.map((product, index) => (
             <p
               key={index}
-              className="font-medium text-base sm:text-xl lg:text-base bg-color2.05 text-color2.6 rounded-md p-1 lg:px-8 lg:py-3 max-sm:mx-1"
+              className="font-medium text-base sm:text-xl lg:text-base bg-color2.05 text-color2.6 rounded-md lg:rounded-full 2xl:rounded-full max-lg:mx-3 p-1 sm:px-2 lg:px-3 2xl:px-8 lg:py-3 max-2xl:text-center"
             >
               {product}
             </p>

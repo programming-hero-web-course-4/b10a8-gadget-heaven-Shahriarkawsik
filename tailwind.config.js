@@ -20,6 +20,7 @@ export default {
       },
       fontSize: {
         24: "24px",
+        32: "32px",
         40: "40px",
         56: "56px",
       },
