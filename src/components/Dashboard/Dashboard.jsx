@@ -1,6 +1,10 @@
 import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import { Alert } from "./../../Alert/Alert";
+import { AiOutlineControl } from "react-icons/ai";
+import { TiDeleteOutline } from "react-icons/ti";
+import Card from "../Card/Card";
+import WishList from "../WishList/WishList";
 
 const Dashboard = () => {
   const [toggle, setToggle] = useState({ item: "card", status: false });
@@ -66,6 +70,8 @@ const Dashboard = () => {
           </div>
         </div>
       </div>
+      {/* Card */}
+      {toggle.status ? <Card /> : <WishList />}
     </div>
   );
 };
