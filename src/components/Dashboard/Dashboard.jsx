@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import Card from "../Card/Card";
 import WishList from "../WishList/WishList";
-import checkImg from "../../assets/Group.png";
+
 
 const Dashboard = () => {
   const [toggle, setToggle] = useState({ item: "card", status: true });
@@ -65,28 +65,7 @@ const Dashboard = () => {
       </div>
       {/* toggle Card and Wishlist */}
       {toggle.status ? <Card /> : <WishList />}
-      {/* Modal */}
-      <dialog id="paymentModal" className="modal">
-        <div className="modal-box text-center space-y-3">
-          <img className="mx-auto" src={checkImg} alt="" />
-          <h3 className="font-bold text-24 leading-8 text-color2">
-            Payment Successfully
-          </h3>
-          <hr />
-          <p className="font-medium text-base leading-8 text-color2.6">
-            Thanks for purchasing.
-          </p>
-          <p className="font-medium text-base leading-8 text-color2.6">
-            Total : {}
-          </p>
-          {/* modal-action */}
-          <div className="modal-action flex justify-center">
-            <form method="dialog ">
-              <button className="btn w-full">Close</button>
-            </form>
-          </div>
-        </div>
-      </dialog>
+      
     </div>
   );
 };
