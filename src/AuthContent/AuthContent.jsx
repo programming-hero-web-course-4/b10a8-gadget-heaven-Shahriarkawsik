@@ -5,6 +5,7 @@ const AuthContent = ({ children }) => {
   const [products, setProducts] = useState([]);
   const [gadgetCard, setGadgetCard] = useState([]);
   const [gadgetWishlist, setGadgetWishlist] = useState([]);
+  const [totalCardPrice, setTotalCardPrice] = useState(0);
   const authInfo = {
     products,
     setProducts,
@@ -12,6 +13,8 @@ const AuthContent = ({ children }) => {
     setGadgetCard,
     gadgetWishlist,
     setGadgetWishlist,
+    totalCardPrice,
+    setTotalCardPrice,
   };
   return (
     <gadgetContext.Provider value={authInfo}>{children}</gadgetContext.Provider>

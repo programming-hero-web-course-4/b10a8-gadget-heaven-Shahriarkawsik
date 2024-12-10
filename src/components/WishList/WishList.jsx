@@ -4,7 +4,16 @@ import { gadgetContext } from "../../AuthContent/AuthContent";
 import { Alert } from "./../../Alert/Alert";
 
 const WishList = () => {
-  const { gadgetWishlist, setGadgetWishlist } = useContext(gadgetContext);
+  const { gadgetCard, setGadgetCard, gadgetWishlist, setGadgetWishlist } =
+    useContext(gadgetContext);
+  const handleAddToCard = (product) => {
+    if (gadgetCard.includes(product)) {
+      Alert(false, "Already added in card");
+      return;
+    }
+    setGadgetCard([...gadgetCard, product]);
+    Alert(true, "Add Product to Your Cart");
+  };
   return (
     <div className="bg-gray-100 py-12">
       <div className="w-11/12 lg:w-4/5 mx-auto space-y-12">
@@ -32,6 +41,7 @@ const WishList = () => {
                       Price: ${gadget?.price}
                     </p>
                     <button
+                      onClick={() => handleAddToCard(gadget)}
                       className="font-medium sm:font-bold text-base sm:text-xl lg:text-base bg-color3 text-white 
                 rounded-full px-5 py-2 lg:px-3 2xl:px-8 lg:py-3 "
                     >

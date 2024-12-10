@@ -63,7 +63,7 @@ const StatChart = () => {
                 fill={
                   selectedSubject === "price"
                     ? "rgb(149, 56, 226)"
-                    : "#309c08"
+                    : "rgb(48, 156, 8,0.9)"
                 }
               />
             </BarChart>

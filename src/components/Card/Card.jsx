@@ -5,15 +5,33 @@ import { gadgetContext } from "../../AuthContent/AuthContent";
 import { Alert } from "../../Alert/Alert";
 
 const Card = () => {
-  const { gadgetCard, setGadgetCard } = useContext(gadgetContext);
+  const { gadgetCard, setGadgetCard, totalCardPrice, setTotalCardPrice } =
+    useContext(gadgetContext);
+  // Calculate gadget price in card
+  setTotalCardPrice(gadgetCard.reduce((acc, gadget) => acc + gadget.price, 0));
+
+  // sorted
+  const handleSortByPrice = () => {
+    setGadgetCard([...gadgetCard].sort((a, b) => b.price - a.price));
+    Alert(true, "Gadget is sorted by price.");
+  };
+
   return (
     <div className="bg-gray-100 py-12">
       <div className="w-11/12 lg:w-4/5 mx-auto space-y-12">
         <div className="flex justify-between items-center bg-gray-100">
           <h1 className="font-bold text-color1 lg:text-2xl">Cart</h1>
           <div className="flex items-center gap-4 lg:gap-6">
-            <h1 className="font-bold text-color1 lg:text-2xl">Total Cost:</h1>
-            <button className="text-color3 font-semibold text-18 leading-7 flex items-center gap-3 border border-color3  rounded-full px-[22px] py-3">
+            <h1
+              // onClick={() => handleTotalCardPrice()}
+              className="font-bold text-color1 lg:text-2xl"
+            >
+              Total Cost: {totalCardPrice}
+            </h1>
+            <button
+              onClick={() => handleSortByPrice()}
+              className="text-color3 font-semibold text-18 leading-7 flex items-center gap-3 border border-color3  rounded-full px-[22px] py-3"
+            >
               <span>Sort by Price</span>{" "}
               <AiOutlineControl className="text-2xl" />
             </button>
@@ -45,6 +63,7 @@ const Card = () => {
                       Price: ${gadget?.price}
                     </p>
                   </div>
+                  {/* Delete btn */}
                   <button
                     onClick={() => {
                       const remainGadgetInCard = gadgetCard.filter(

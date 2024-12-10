@@ -22,12 +22,21 @@ const ProductDetails = () => {
     availability,
     rating,
   } = product;
-  // const newGadget = [...gadgetCard, product];
+
   const handleAddToCard = (product) => {
+    if (gadgetCard.includes(product)) {
+      Alert(false, "Already added in card");
+      return;
+    }
     setGadgetCard([...gadgetCard, product]);
     Alert(true, "Add Product to Your Cart");
   };
+
   const handleWishlist = (product) => {
+    if (gadgetWishlist.includes(product)) {
+      Alert(false, "Already added in Wishlist");
+      return;
+    }
     setGadgetWishlist([...gadgetWishlist, product]);
     Alert(true, "Add Product to Your Wishlist");
   };
